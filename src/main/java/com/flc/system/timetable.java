@@ -117,8 +117,46 @@ public class timetable {
         return overalltype;
     }
 
+//get lesson by overall month
+    public ArrayList<Lessons> getlessonsbymonth(int month)
+    {
+        ArrayList<Lessons> overallmonth=new ArrayList<>();
+        for(Lessons ln: Lessons){
+            if(ln.getMonth()==month)
+                overallmonth.add(ln);
+        }
+        return overallmonth;
+    }
 
+    //get lesson by overall weekend
+    public ArrayList<Lessons> getlessonsbyweekend(int weekend)
+    {
+        ArrayList<Lessons> overallweekend=new ArrayList<>();
+        for(Lessons ln: Lessons){
+            if(ln.getWeekend()==weekend)
+                overallweekend.add(ln);
+        }
+        return overallweekend;
+    }
     
+    public ArrayList<Lessons> getAllLessons(){return Lessons;} 
+    
+    public Lessons getLessonById(String id){return Lessons.get(Integer.parseInt(id));}
+
+
+    public void displayLessons(ArrayList<Lessons> list)
+    {
+        System.out.println("---------------------------------------------------------------------------------");
+        System.out.println(String.format("%-10s %-10s %-10s %-15s %-10s %-10s %-10s", "LessonID", "Day", "Time", "Exercise Type", "Price", "Weekend", "Month"));
+        System.out.println("---------------------------------------------------------------------------------");
+        for(Lessons ln: list){
+            System.out.println(String.format("%-10s %-10s %-10s %-15s %-10.2f %-10d %-10d",
+                    ln.getLessonId(), ln.getDay(), ln.getTime(), ln.getExercise_type(),
+                    ln.getPrice(), ln.getWeekend(), ln.getMonth()));
+        }
+        System.out.println("---------------------------------------------------------------------------------");
+    }
+
 
 
 
