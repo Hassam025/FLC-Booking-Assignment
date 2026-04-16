@@ -3,15 +3,15 @@ package com.flc.model;
 public class Booking {
     private String bookingId;
     private String userId;
-    private String Lesson;
+    private String Lessons;
     private BookingStatus status;
     private String review;
     private int rating ;
 
-    public Booking (String bookingId,Memeber member , Lesson lesson){
+    public Booking (String bookingId,Memeber member , Lessons lesson){
         this.bookingId=bookingId;
         this.userId=member;
-        this.Lesson=lesson;
+        this.Lessons=lesson;
         this.status=BookingStatus.Booked;
         this.review="null";
         this.rating=0;
@@ -30,7 +30,7 @@ public class Booking {
 
     public String getBookingId() {return bookingId;}
     public String getMemeber() {return member;}
-    public Lesson getLesson() {return lesson;}
+    public Lessons getLessons() {return lesson;}
     public BookingStatus getStatus() {return status;}
     public String getReview() {return review;}
     public int getRating(){return rating;}

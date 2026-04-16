@@ -1,6 +1,6 @@
 package com.flc.ui;
 
-import com.flc.model.Members;
+import com.flc.model.Member;
 import com.flc.system.BookingSystem;
 import com.flc.model.Booking;
 import com.flc.system.ReportGenerator;
@@ -23,13 +23,13 @@ public class Main {
             int choice = getUserChoice();
             switch (choice) {
                 case 1:
-                    handleBookLesson();
+                    handleBookLessons();
                     break;
                 case 2:
                     handleChangeCancel();
                     break;
                 case 3:
-                    handleAttendLesson();
+                    handleAttendLessons();
                     break;
 
                 case 4:
@@ -52,9 +52,9 @@ public class Main {
 
     private static void displayMenu() {
         System.out.println("\n--- Furzefield Leisure Booking System ---");
-        System.out.println("1. Book a Lesson");
+        System.out.println("1. Book a Lessons");
         System.out.println("2. Change or Cancel Booking");
-        System.out.println("3. Attend a Lesson");
+        System.out.println("3. Attend a Lessons");
         System.out.println("4. Generate Monthly Report");
         System.out.println("5. Generate Champion Report");
         System.out.println("6. Exit");
@@ -62,14 +62,14 @@ public class Main {
     }
 
     // Functionality for booking a lesson
-    private static void handleBookLesson() {
-        System.out.println("\n--- Book a Lesson ---");
+    private static void handleBookLessons() {
+        System.out.println("\n--- Book a Lessons ---");
 
-        //show register members
+        //show register Member
 
-        System.out.println("Available Members:");
+        System.out.println("Available Member:");
 
-        for (Members member : bookingSystem.getMembers())
+        for (Member member : bookingSystem.getMember())
         {
             System.out.println(" " +member.getId() + ": " + member.getName());
         }
@@ -102,9 +102,9 @@ public class Main {
             return;
         }
 
-        System.out.println("Enter Lesson ID to Book: ");
+        System.out.println("Enter Lessons ID to Book: ");
         String lessonId = scanner.nextLine().trim();
-        bookingSystem.bookLesson(memberId, lessonId);
+        bookingSystem.bookLessons(memberId, lessonId);
 
 
     }
@@ -114,7 +114,7 @@ public class Main {
         System.out.println("\n--- Change or Cancel Booking ---");
         System.out.print("Enter Member ID: ");
         String memberId = scanner.nextLine().trim();
-        System.out.print("Enter Lesson ID to Change/Cancel: ");
+        System.out.print("Enter Lessons ID to Change/Cancel: ");
         String lessonId = scanner.nextLine().trim();
         System.out.println("Enter Booking ID: ");
         String bookingId = scanner.nextLine().trim();
@@ -129,7 +129,7 @@ public class Main {
         String choice = scanner.nextLine().trim();
 
         if (choice.equals("1")) {
-            System.out.println("Enter new Lesson ID: ");
+            System.out.println("Enter new Lessons ID: ");
             System.out.println("1: Day:");
             System.out.println("2: Exercise Type:");
 
@@ -155,9 +155,9 @@ public class Main {
                 return;
             }
 
-            System.out.println("Enter new Lesson ID: ");
-            String newLessonId = scanner.nextLine().trim();
-            bookingSystem.changeBooking(bookingId, newLessonId);
+            System.out.println("Enter new Lessons ID: ");
+            String newLessonsId = scanner.nextLine().trim();
+            bookingSystem.changeBooking(bookingId, newLessonsId);
          
         }
         else if (choice.equals("2")) {
@@ -176,9 +176,9 @@ public class Main {
     }
 
     // Functionality for attending a lesson
-    private static void handleAttendLesson() {
+    private static void handleAttendLessons() {
 
-        System.out.println("\n--- Attend a Lesson ---");
+        System.out.println("\n--- Attend a Lessons ---");
         System.out.print("Enter Member ID to view bookings: ");
         String memberId = scanner.nextLine().trim();
         bookingSystem.displayMemberBookings(memberId);
@@ -201,7 +201,7 @@ public class Main {
                 System.out.println("Invalid input. Please enter a number between 1 and 5.");
             }
         }
-        bookingSystem.attendLesson(bookingId, review, rating);
+        bookingSystem.attendLessons(bookingId, review, rating);
 
     }
 
@@ -216,7 +216,7 @@ public class Main {
                 System.out.println("Invalid month. Please enter a number between 3 and 4.");
                 return;
             }
-            reportGenerator.generateMothlyLessonReport(month);
+            reportGenerator.generateMothlyLessonsReport(month);
             
         }
          catch (NumberFormatException e)

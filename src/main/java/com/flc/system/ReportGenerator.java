@@ -9,30 +9,30 @@ public class ReportGenerator {
         this.bookingSystem = bookingSystem;
     }
 
-    public void generateMothlyLessonReport(int month)
+    public void generateMothlyLessonsReport(int month)
     {
         System.out.println("\n--------------------------------------------------");
         
-        system.out.println("Monthly Lesson Report for Month: " + month);
+        system.out.println("Monthly Lessons Report for Month: " + month);
         System.out.print("===============================================================");
 
         System.out.printf("%-6s %-10s %-10s %-12s %-9s %-10s%n","ID","Day","Type","Attended","Avg rating");
         System.out.println("------------------------------------------------------------------------------");
 
-        ArrayList<Lesson>monthLessons=bookingSystem.getTimetable().getLessonsByMonth(month);
+        ArrayList<Lessons>monthLessons=bookingSystem.getTimetable().getLessonsByMonth(month);
 
         if(monthLessons.isEmpty())
         {
-            System.out.println("No Lesson found for this Month");
+            System.out.println("No Lessons found for this Month");
             return;
         }
 
-        for(Lesson ln: monthLessons)
+        for(Lessons ln: monthLessons)
         {
             int attended=calculatorAttendedCount(ln);
             double avgrating = calculateAverageRating(ln);
             String ratingDisplay = attended == 0 ? "N/A" : String.format("%.1f", avgrating);
-            System.out.printf("%-6s %-10s %-10s %-12s %-9s %-10s%n",ln.getLessonId(), ln.getDay(), ln.getType(), attended, ratingDisplay);
+            System.out.printf("%-6s %-10s %-10s %-12s %-9s %-10s%n",ln.getLessonsId(), ln.getDay(), ln.getType(), attended, ratingDisplay);
         }
         System.out.println("--------------------------------------------------");
 
@@ -82,12 +82,12 @@ public class ReportGenerator {
 
 
 
-    public int calculatorAttendedCount(Lesson lesson)
+    public int calculatorAttendedCount(Lessons lesson)
     {
         int count=0;
         for(Booking b: bookingSystem.getBookings())
         {
-            if(b.getLesson().getLessonId().equals(lesson.getLessonId()) && b.getStatus()==BookingStatus.ATTENDED)
+            if(b.getLessons().getLessonsId().equals(lesson.getLessonsId()) && b.getStatus()==BookingStatus.Attended)
             {
                 count++;
             }
@@ -96,14 +96,14 @@ public class ReportGenerator {
     }
 
 
-    public double calculateAverageRating(Lesson lesson)
+    public double calculateAverageRating(Lessons lesson)
     {
         int totalRating=0;
         int ratingCount=0;
 
         for(Booking b: bookingSystem.getBookings())
         {
-            if(b.getLesson().getLessonId().equals(lesson.getLessonId()) && b.getStatus()==BookingStatus.ATTENDED)
+            if(b.getLessons().getLessonsId().equals(lesson.getLessonsId()) && b.getStatus()==BookingStatus.Attended)
             {
                 totalRating+=b.getRating();
                 ratingCount++;
@@ -119,9 +119,9 @@ public class ReportGenerator {
         double income=0.0;
         for(Booking b: bookingSystem.getBookings())
         {
-            if(b.getLesson().getType().equalsIgnoreCase(type) && b.getStatus()==BookingStatus.ATTENDED && b.getLesson().getMonth()==month)
+            if(b.getLessons().getType().equalsIgnoreCase(type) && b.getStatus()==BookingStatus.Attended && b.getLessons().getMonth()==month)
             {
-                income+=b.getLesson().getPrice();
+                income+=b.getLessons().getPrice();
             }
         }
         return income;

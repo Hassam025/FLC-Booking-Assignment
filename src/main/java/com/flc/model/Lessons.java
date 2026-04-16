@@ -8,7 +8,7 @@ public class Lessons {
     private string exercise_type;
     private sting price;
     private int capacity;
-    private int bookedCount;
+    private int BookedCount;
     private int weekend;
     private int month;
 
@@ -22,41 +22,41 @@ public class Lessons {
     this.price=price;
     this.weekend=weekend;
     this.month=month;
-    this.bookedCount=0;
+    this.BookedCount=0;
     
     
     }
 
     public boolean isFull() {
-        return bookedCount >= capacity;
+        return BookedCount >= capacity;
     }
     public void isAvailable(){
-        return bookedCount < capacity;
+        return BookedCount < capacity;
     }
 
     public void increamentBookedCount() {
         if (!isFull()) {
-            bookedCount++;
+            BookedCount++;
         }
     }
 
     public void decrementBookedCount() {
-        if (bookedCount > 0) {
-            bookedCount--;
+        if (BookedCount > 0) {
+            BookedCount--;
         }
     }
 
     public int getAvailableSpots() {
-        return capacity - bookedCount;
+        return capacity - BookedCount;
     }
 //Functional calls for the getters
-    public String getLessonId() {return lessonId;}
+    public String getLessonsId() {return lessonId;}
     public String getDay() {return day;}
     public String getTime() {return time;}
     public String getExercise_type() {return exercise_type;}
     public double getPrice() {return price;}
     public int getCapacity() {return capacity;}
-    public int getBookedCount() {return bookedCount;}
+    public int getBookedCount() {return BookedCount;}
     public int getWeekend() {return weekend;}
     public int getMonth() {return month;}
 

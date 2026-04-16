@@ -141,17 +141,17 @@ public class timetable {
     
     public ArrayList<Lessons> getAllLessons(){return Lessons;} 
     
-    public Lessons getLessonById(String id){return Lessons.get(Integer.parseInt(id));}
+    public Lessons getLessonsById(String id){return Lessons.get(Integer.parseInt(id));}
 
 
     public void displayLessons(ArrayList<Lessons> list)
     {
         System.out.println("---------------------------------------------------------------------------------");
-        System.out.println(String.format("%-10s %-10s %-10s %-15s %-10s %-10s %-10s", "LessonID", "Day", "Time", "Exercise Type", "Price", "Weekend", "Month"));
+        System.out.println(String.format("%-10s %-10s %-10s %-15s %-10s %-10s %-10s", "LessonsID", "Day", "Time", "Exercise Type", "Price", "Weekend", "Month"));
         System.out.println("---------------------------------------------------------------------------------");
         for(Lessons ln: list){
             System.out.println(String.format("%-10s %-10s %-10s %-15s %-10.2f %-10d %-10d",
-                    ln.getLessonId(), ln.getDay(), ln.getTime(), ln.getExercise_type(),
+                    ln.getLessonsId(), ln.getDay(), ln.getTime(), ln.getExercise_type(),
                     ln.getPrice(), ln.getWeekend(), ln.getMonth()));
         }
         System.out.println("---------------------------------------------------------------------------------");
