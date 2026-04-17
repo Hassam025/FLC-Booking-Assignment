@@ -50,7 +50,7 @@ public class Lessons {
         return capacity - BookedCount;
     }
 //Functional calls for the getters
-    public String getLessonsId() {return lessonId;}
+    public String getLessonId() {return lessonId;}
     public String getDay() {return day;}
     public String getTime() {return time;}
     public String getExercise_type() {return exercise_type;}

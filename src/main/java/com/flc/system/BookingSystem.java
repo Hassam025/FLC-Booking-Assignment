@@ -30,7 +30,7 @@ public class BookingSystem {
 
     public boolean bookLessons(String memberId , String lessonId)
     {
-        Member member= findMemberById(memberId);
+        Member member= getMemberById(memberId);
         if(member == null){
             System.out.println("Member not found");
             return false;
@@ -119,7 +119,7 @@ public class BookingSystem {
 
     }
 
-    public Member findMemberById(String Id){
+    public Member getMemberById(String Id){
         for (Member m : Member){
             if(m.getId().equalsIgnoreCase(Id)){
                 return m;
@@ -132,7 +132,7 @@ public class BookingSystem {
 
     public boolean isDuplicateBooking(Member member, Lessons lesson){
         for (Booking b : member.getBookings()){
-            if (b.getMemeber().getLessonsId().equals(lesson.getLessonsId())
+            if (b.getMemeber().getLessonId().equals(lesson.getLessonId())
             && (b.getStatus() == BookingStatus.Cancelled)){
                 return true;
             }
@@ -145,7 +145,7 @@ public class BookingSystem {
     }
 
     public void displayMemberBookings(String memberId){
-        Member member = findMemberById(memberId);
+        Member member = getMemberById(memberId);
         if(member == null){
             System.out.println("Member not found");
             return;

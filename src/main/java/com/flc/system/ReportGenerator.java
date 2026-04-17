@@ -32,7 +32,7 @@ public class ReportGenerator {
             int attended=calculatorAttendedCount(ln);
             double avgrating = calculateAverageRating(ln);
             String ratingDisplay = attended == 0 ? "N/A" : String.format("%.1f", avgrating);
-            System.out.printf("%-6s %-10s %-10s %-12s %-9s %-10s%n",ln.getLessonsId(), ln.getDay(), ln.getType(), attended, ratingDisplay);
+            System.out.printf("%-6s %-10s %-10s %-12s %-9s %-10s%n",ln.getLessonId(), ln.getDay(), ln.getType(), attended, ratingDisplay);
         }
         System.out.println("--------------------------------------------------");
 
@@ -87,7 +87,7 @@ public class ReportGenerator {
         int count=0;
         for(Booking b: bookingSystem.getBookings())
         {
-            if(b.getLessons().getLessonsId().equals(lesson.getLessonsId()) && b.getStatus()==BookingStatus.Attended)
+            if(b.getLessons().getLessonId().equals(lesson.getLessonId()) && b.getStatus()==BookingStatus.Attended)
             {
                 count++;
             }
@@ -103,7 +103,7 @@ public class ReportGenerator {
 
         for(Booking b: bookingSystem.getBookings())
         {
-            if(b.getLessons().getLessonsId().equals(lesson.getLessonsId()) && b.getStatus()==BookingStatus.Attended)
+            if(b.getLessons().getLessonId().equals(lesson.getLessonId()) && b.getStatus()==BookingStatus.Attended)
             {
                 totalRating+=b.getRating();
                 ratingCount++;
