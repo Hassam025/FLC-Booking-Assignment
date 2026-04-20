@@ -2,10 +2,10 @@ package com.flc.system;
 import com.flc.model.Lessons;
 import java.util.ArrayList;
 
-public class timetable {
+public class Timetable {
     private ArrayList<Lessons> Lessons;
 
-    public timetable(){
+    public Timetable(){
         Lessons=new ArrayList<>();
         initializeLessons();
     
@@ -91,13 +91,13 @@ public class timetable {
 
 
     // return Lessons by overall day 
-    public ArrayList<Lessons> getLessonsbyday(String day)
+    public ArrayList<Lessons> getLessonsByDay(String day)
     {
         
         ArrayList<Lessons> overallLessons=new ArrayList<>();
         {
             for (Lessons ln: Lessons)
-                if(ln.getDay().equalsIgnoreCase(day))
+                if(ln.getDay()!= null && ln.getDay().equalsIgnoreCase(day))
                     overallLessons.add(ln);
         }
 
@@ -105,20 +105,30 @@ public class timetable {
     }
 
 
+    public ArrayList<Lessons> getLessonsByExerciseType(String exerciseType)
+    {
+        ArrayList<Lessons> overallExerciseType=new ArrayList<>();
+        for(Lessons ln: Lessons){
+            if(ln.getExercise_type()!= null && ln.getExercise_type().equalsIgnoreCase(exerciseType))
+                overallExerciseType.add(ln);
+        }
+        return overallExerciseType;
+    }
+
 //get lesson by overall type
 
-    public ArrayList<Lessons> getlessonsbytype(String type)
+    public ArrayList<Lessons> getLessonsByType(String type)
     {
     ArrayList<Lessons> overalltype=new ArrayList<>();
     for(Lessons ln: Lessons){
-        if(ln.getExercise_type().equalsIgnoreCase(type))
+        if(ln.getExercise_type()!= null && ln.getExercise_type().equalsIgnoreCase(type))
             overalltype.add(ln);
     }
         return overalltype;
     }
 
 //get lesson by overall month
-    public ArrayList<Lessons> getlessonsbymonth(int month)
+    public ArrayList<Lessons> getLessonsByMonth(int month)
     {
         ArrayList<Lessons> overallmonth=new ArrayList<>();
         for(Lessons ln: Lessons){
@@ -129,7 +139,7 @@ public class timetable {
     }
 
     //get lesson by overall weekend
-    public ArrayList<Lessons> getlessonsbyweekend(int weekend)
+    public ArrayList<Lessons> getLessonsByWeekend(int weekend)
     {
         ArrayList<Lessons> overallweekend=new ArrayList<>();
         for(Lessons ln: Lessons){
@@ -141,8 +151,26 @@ public class timetable {
     
     public ArrayList<Lessons> getAllLessons(){return Lessons;} 
     
-    public Lessons getLessonById(String id){return Lessons.get(Integer.parseInt(id));}
+    public Lessons getLessonId(String id)
+    {
+        for(Lessons l: Lessons)
+        {
+            if(l.getLessonId().equalsIgnoreCase(id))
+            {
+                return l;
+            }
+        }
+        return null;
+    }
 
+    public Lessons getLessonById(String lessonId){
+        for(Lessons l: Lessons){
+            if(l.getLessonId().equalsIgnoreCase(lessonId)){
+                return l;
+            }
+        }
+        return null;
+    }
 
     public void displayLessons(ArrayList<Lessons> list)
     {

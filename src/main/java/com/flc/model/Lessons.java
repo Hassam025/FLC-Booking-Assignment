@@ -3,10 +3,10 @@ package com.flc.model;
 public class Lessons {
 
     private String lessonId;
-    private string day;
-    private string time;
-    private string exercise_type;
-    private sting price;
+    private String day;
+    private String time;
+    private String exercise_type;
+    private double price;
     private int capacity;
     private int BookedCount;
     private int weekend;
@@ -16,13 +16,14 @@ public class Lessons {
     public Lessons(String lessonId, String day ,String time,String exercise_type ,double price, int weekend, int month) {
     
     this.lessonId=lessonId;
+    this.day=day;
     this.time=time;
-    this.capacity=capacity;
     this.exercise_type=exercise_type;
     this.price=price;
     this.weekend=weekend;
     this.month=month;
     this.BookedCount=0;
+    this.capacity=capacity=100; // this is default capacity set
     
     
     }
@@ -30,17 +31,17 @@ public class Lessons {
     public boolean isFull() {
         return BookedCount >= capacity;
     }
-    public void isAvailable(){
+    public boolean isAvailable(){
         return BookedCount < capacity;
     }
 
-    public void increamentBookedCount() {
+    public void incrementBooked() {
         if (!isFull()) {
             BookedCount++;
         }
     }
 
-    public void decrementBookedCount() {
+    public void decrementBooked() {
         if (BookedCount > 0) {
             BookedCount--;
         }
@@ -59,6 +60,9 @@ public class Lessons {
     public int getBookedCount() {return BookedCount;}
     public int getWeekend() {return weekend;}
     public int getMonth() {return month;}
+    public String getType() {return exercise_type;}
+    public String getName() {return exercise_type + " on " + day + " at " + time;}
+    public String getInstructor() {return "Instructor for " + exercise_type;}
 
 
 }

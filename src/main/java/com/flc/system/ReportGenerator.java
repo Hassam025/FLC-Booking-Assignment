@@ -1,22 +1,22 @@
 package com.flc.system;
 import com.flc.model.*;
 import java.util.ArrayList;
+
 public class ReportGenerator {
     private BookingSystem bookingSystem;
 
+
     public ReportGenerator(BookingSystem bookingSystem) {
-    
         this.bookingSystem = bookingSystem;
     }
-
-    public void generateMothlyLessonsReport(int month)
+    public void generateMonthlyLessonsReport(int month)
     {
         System.out.println("\n--------------------------------------------------");
         
-        system.out.println("Monthly Lessons Report for Month: " + month);
-        System.out.print("===============================================================");
+        System.out.println("Monthly Lessons Report for Month: " + month);
+        
 
-        System.out.printf("%-6s %-10s %-10s %-12s %-9s %-10s%n","ID","Day","Type","Attended","Avg rating");
+        System.out.printf("%-6s %-10s %-10s %-12s %-9s%n","ID","Day","Type","Attended","Avg rating");
         System.out.println("------------------------------------------------------------------------------");
 
         ArrayList<Lessons>monthLessons=bookingSystem.getTimetable().getLessonsByMonth(month);
@@ -32,7 +32,7 @@ public class ReportGenerator {
             int attended=calculatorAttendedCount(ln);
             double avgrating = calculateAverageRating(ln);
             String ratingDisplay = attended == 0 ? "N/A" : String.format("%.1f", avgrating);
-            System.out.printf("%-6s %-10s %-10s %-12s %-9s %-10s%n",ln.getLessonId(), ln.getDay(), ln.getType(), attended, ratingDisplay);
+            System.out.printf("%-6s %-10s %-10s %-12s %-9s%n",ln.getLessonId(), ln.getDay(), ln.getType(), attended, ratingDisplay);
         }
         System.out.println("--------------------------------------------------");
 
@@ -51,7 +51,7 @@ public class ReportGenerator {
         double highestAvgRating=0.0;
 
 
-        System.out.println("%-14s %-10s%n","Exercise Type","Income");
+        System.out.printf("%-14s %-10s%n","Exercise Type","Income");
         System.out.println("--------------------------------------------------");
 
 
@@ -82,6 +82,9 @@ public class ReportGenerator {
 
 
 
+
+
+    
     public int calculatorAttendedCount(Lessons lesson)
     {
         int count=0;
@@ -128,21 +131,6 @@ public class ReportGenerator {
 
     }
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

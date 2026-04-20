@@ -2,16 +2,17 @@ package com.flc.model;
 
 public class Booking {
     private String bookingId;
+    private Member member;
+    private Lessons lesson;
     private String userId;
-    private String Lessons;
     private BookingStatus status;
     private String review;
     private int rating ;
 
-    public Booking (String bookingId,Memeber member , Lessons lesson){
+    public Booking (String bookingId,Member member , Lessons lesson){
         this.bookingId=bookingId;
-        this.userId=member;
-        this.Lessons=lesson;
+        this.member=member;
+        this.lesson=lesson;
         this.status=BookingStatus.Booked;
         this.review="null";
         this.rating=0;
@@ -23,15 +24,26 @@ public class Booking {
         this.rating=rating;
     }
 
-    public void cacel(){
+    public void cancel(){
         this.status=BookingStatus.Cancelled;
     }
 
+    public Member getMember(){
+        return member;
+
+    }
+
+    public void changeLessons(Lessons newLessons)
+    {
+        this.lesson=newLessons;
+        this.status=BookingStatus.Changed;
+    }
 
     public String getBookingId() {return bookingId;}
-    public String getMemeber() {return member;}
     public Lessons getLessons() {return lesson;}
     public BookingStatus getStatus() {return status;}
     public String getReview() {return review;}
+    
     public int getRating(){return rating;}
 }
+ 
