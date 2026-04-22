@@ -250,6 +250,7 @@ public class Main {
 
     private static void handleChampionReport(){
         System.out.println("\n--- Champion Exercise Report ---");
+        
     }
     
     

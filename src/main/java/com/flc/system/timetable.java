@@ -13,76 +13,76 @@ public class Timetable {
 
     private void initializeLessons(){
 
-// Weekend 1 to 4 ,Month of March   and weekend 5 to 8 , Month of April
-// format of the sample reord is  (LessonsID,Dat,Time,Type,price,weeknd,month)
+// number of weeks from 1 to 4 in the Month of March  and have weeks from 5 to 8 in the Month of April
+// format of the sample reord is  (LessonsID , Date ,Time ,Type ,price ,weeknd ,month)
 
 
 
             // record for the week#1
 
-        Lessons.add(new Lessons("L001","Saturday" ,"Morning","Yoga" , 10,1,3));
-        Lessons.add(new Lessons("L002","Saturday" ,"Morning","Zumba" , 12,1,3));
-        Lessons.add(new Lessons("L003","Saturday" ,"Morning","Box fit" , 13,1,3));
-        Lessons.add(new Lessons("L004","Saturday" ,"Morning","Aquacise" , 11,1,3));
-        Lessons.add(new Lessons("L005","Saturday" ,"Morning","Pilates" , 11.50,1,3));
-        Lessons.add(new Lessons("L006","Saturday" ,"Morning","Body Blitz" , 14,1,3));
+        Lessons.add(new Lessons("L203","Saturday" ,"Morning","Yoga" , 18,1,3));
+        Lessons.add(new Lessons("L202","Saturday" ,"Evening","Zumba" , 24,1,3));
+        Lessons.add(new Lessons("L201","Saturday" ,"Morning","Box fit" , 13,1,3));
+        Lessons.add(new Lessons("L204","Saturday" ,"Afternoon","Aquacise" , 11,1,3));
+        Lessons.add(new Lessons("L205","Saturday" ,"Morning","Pilates" , 11.50,1,3));
+        Lessons.add(new Lessons("L206","Saturday" ,"Evening","Body Blitz" , 30,1,3));
 
         //reord for the week#2
         // ===== WEEKEND 2 (March) =====
-        Lessons.add(new Lessons("L007", "Saturday", "Morning",   "Zumba",      12.00, 2, 3));
-        Lessons.add(new Lessons("L008", "Saturday", "Afternoon", "Yoga",       10.00, 2, 3));
-        Lessons.add(new Lessons("L009", "Saturday", "Evening",   "Pilates",    11.50, 2, 3));
-        Lessons.add(new Lessons("L010", "Sunday",   "Morning",   "Box Fit",    13.00, 2, 3));
-        Lessons.add(new Lessons("L011", "Sunday",   "Afternoon", "Aquacise",   11.00, 2, 3));
-        Lessons.add(new Lessons("L012", "Sunday",   "Evening",   "Body Blitz", 14.00, 2, 3));
+        Lessons.add(new Lessons("L207", "Saturday", "Morning",   "Zumba",      24.00, 2, 3));
+        Lessons.add(new Lessons("L208", "Saturday", "Afternoon", "Yoga",       18.00, 2, 3));
+        Lessons.add(new Lessons("L209", "Saturday", "Evening",   "Pilates",    11.50, 2, 3));
+        Lessons.add(new Lessons("L210", "Sunday",   "Morning",   "Box Fit",    13.00, 2, 3));
+        Lessons.add(new Lessons("L211", "Sunday",   "Afternoon", "Aquacise",   11.00, 2, 3));
+        Lessons.add(new Lessons("L212", "Sunday",   "Evening",   "Body Blitz", 30.00, 2, 3));
 
         // ===== WEEKEND 3 (March) =====
-        Lessons.add(new Lessons("L013", "Saturday", "Morning",   "Body Blitz", 14.00, 3, 3));
-        Lessons.add(new Lessons("L014", "Saturday", "Afternoon", "Aquacise",   11.00, 3, 3));
-        Lessons.add(new Lessons("L015", "Saturday", "Evening",   "Yoga",       10.00, 3, 3));
-        Lessons.add(new Lessons("L016", "Sunday",   "Morning",   "Zumba",      12.00, 3, 3));
-        Lessons.add(new Lessons("L017", "Sunday",   "Afternoon", "Pilates",    11.50, 3, 3));
-        Lessons.add(new Lessons("L018", "Sunday",   "Evening",   "Box Fit",    13.00, 3, 3));
+        Lessons.add(new Lessons("L213", "Saturday", "Morning",   "Body Blitz", 30.00, 3, 3));
+        Lessons.add(new Lessons("L214", "Saturday", "Afternoon", "Aquacise",   11.00, 3, 3));
+        Lessons.add(new Lessons("L215", "Saturday", "Evening",   "Yoga",       18.00, 3, 3));
+        Lessons.add(new Lessons("L216", "Sunday",   "Morning",   "Zumba",      24.00, 3, 3));
+        Lessons.add(new Lessons("L217", "Sunday",   "Afternoon", "Pilates",    11.50, 3, 3));
+        Lessons.add(new Lessons("L218", "Sunday",   "Evening",   "Box Fit",    13.00, 3, 3));
 
         // ===== WEEKEND 4 (March) =====
-        Lessons.add(new Lessons("L019", "Saturday", "Morning",   "Aquacise",   11.00, 4, 3));
-        Lessons.add(new Lessons("L020", "Saturday", "Afternoon", "Body Blitz", 14.00, 4, 3));
-        Lessons.add(new Lessons("L021", "Saturday", "Evening",   "Zumba",      12.00, 4, 3));
-        Lessons.add(new Lessons("L022", "Sunday",   "Morning",   "Pilates",    11.50, 4, 3));
-        Lessons.add(new Lessons("L023", "Sunday",   "Afternoon", "Box Fit",    13.00, 4, 3));
-        Lessons.add(new Lessons("L024", "Sunday",   "Evening",   "Yoga",       10.00, 4, 3));
+        Lessons.add(new Lessons("L219", "Saturday", "Morning",   "Aquacise",   11.00, 4, 3));
+        Lessons.add(new Lessons("L220", "Saturday", "Afternoon", "Body Blitz", 30.00, 4, 3));
+        Lessons.add(new Lessons("L221", "Saturday", "Evening",   "Zumba",      24.00, 4, 3));
+        Lessons.add(new Lessons("L222", "Sunday",   "Morning",   "Pilates",    11.50, 4, 3));
+        Lessons.add(new Lessons("L223", "Sunday",   "Afternoon", "Box Fit",    13.00, 4, 3));
+        Lessons.add(new Lessons("L224", "Sunday",   "Evening",   "Yoga",       18.00, 4, 3));
 
         // ===== WEEKEND 5 (April) =====
-        Lessons.add(new Lessons("L025", "Saturday", "Morning",   "Pilates",    11.50, 5, 4));
-        Lessons.add(new Lessons("L026", "Saturday", "Afternoon", "Box Fit",    13.00, 5, 4));
-        Lessons.add(new Lessons("L027", "Saturday", "Evening",   "Aquacise",   11.00, 5, 4));
-        Lessons.add(new Lessons("L028", "Sunday",   "Morning",   "Yoga",       10.00, 5, 4));
-        Lessons.add(new Lessons("L029", "Sunday",   "Afternoon", "Zumba",      12.00, 5, 4));
-        Lessons.add(new Lessons("L030", "Sunday",   "Evening",   "Body Blitz", 14.00, 5, 4));
+        Lessons.add(new Lessons("L225", "Saturday", "Morning",   "Pilates",    11.50, 5, 4));
+        Lessons.add(new Lessons("L226", "Saturday", "Afternoon", "Box Fit",    13.00, 5, 4));
+        Lessons.add(new Lessons("L227", "Saturday", "Evening",   "Aquacise",   11.00, 5, 4));
+        Lessons.add(new Lessons("L228", "Sunday",   "Morning",   "Yoga",       18.00, 5, 4));
+        Lessons.add(new Lessons("L229", "Sunday",   "Afternoon", "Zumba",      24.00, 5, 4));
+        Lessons.add(new Lessons("L230", "Sunday",   "Evening",   "Body Blitz", 30.00, 5, 4));
 
         // ===== WEEKEND 6 (April) =====
-        Lessons.add(new Lessons("L031", "Saturday", "Morning",   "Box Fit",    13.00, 6, 4));
-        Lessons.add(new Lessons("L032", "Saturday", "Afternoon", "Pilates",    11.50, 6, 4));
-        Lessons.add(new Lessons("L033", "Saturday", "Evening",   "Body Blitz", 14.00, 6, 4));
-        Lessons.add(new Lessons("L034", "Sunday",   "Morning",   "Zumba",      12.00, 6, 4));
-        Lessons.add(new Lessons("L035", "Sunday",   "Afternoon", "Yoga",       10.00, 6, 4));
-        Lessons.add(new Lessons("L036", "Sunday",   "Evening",   "Aquacise",   11.00, 6, 4));
+        Lessons.add(new Lessons("L231", "Saturday", "Morning",   "Box Fit",    13.00, 6, 4));
+        Lessons.add(new Lessons("L232", "Saturday", "Afternoon", "Pilates",    11.50, 6, 4));
+        Lessons.add(new Lessons("L233", "Saturday", "Evening",   "Body Blitz", 30.00, 6, 4));
+        Lessons.add(new Lessons("L234", "Sunday",   "Morning",   "Zumba",      24.00, 6, 4));
+        Lessons.add(new Lessons("L235", "Sunday",   "Afternoon", "Yoga",       18.00, 6, 4));
+        Lessons.add(new Lessons("L236", "Sunday",   "Evening",   "Aquacise",   11.00, 6, 4));
 
         // ===== WEEKEND 7 (April) =====
-        Lessons.add(new Lessons("L037", "Saturday", "Morning",   "Aquacise",   11.00, 7, 4));
-        Lessons.add(new Lessons("L038", "Saturday", "Afternoon", "Body Blitz", 14.00, 7, 4));
-        Lessons.add(new Lessons("L039", "Saturday", "Evening",   "Zumba",      12.00, 7, 4));
-        Lessons.add(new Lessons("L040", "Sunday",   "Morning",   "Box Fit",    13.00, 7, 4));
-        Lessons.add(new Lessons("L041", "Sunday",   "Afternoon", "Aquacise",   11.00, 7, 4));
-        Lessons.add(new Lessons("L042", "Sunday",   "Evening",   "Yoga",       10.00, 7, 4));
+        Lessons.add(new Lessons("L237", "Saturday", "Morning",   "Aquacise",   11.00, 7, 4));
+        Lessons.add(new Lessons("L238", "Saturday", "Afternoon", "Body Blitz", 30.00, 7, 4));
+        Lessons.add(new Lessons("L239", "Saturday", "Evening",   "Zumba",      24.00, 7, 4));
+        Lessons.add(new Lessons("L240", "Sunday",   "Morning",   "Box Fit",    13.00, 7, 4));
+        Lessons.add(new Lessons("L241", "Sunday",   "Afternoon", "Aquacise",   11.00, 7, 4));
+        Lessons.add(new Lessons("L242", "Sunday",   "Evening",   "Yoga",       18.00, 7, 4));
 
         // ===== WEEKEND 8 (April) =====
-        Lessons.add(new Lessons("L043", "Saturday", "Morning",   "Zumba",      12.00, 8, 4));
-        Lessons.add(new Lessons("L044", "Saturday", "Afternoon", "Aquacise",   11.00, 8, 4));
-        Lessons.add(new Lessons("L045", "Saturday", "Evening",   "Yoga",       10.00, 8, 4));
-        Lessons.add(new Lessons("L046", "Sunday",   "Morning",   "Body Blitz", 14.00, 8, 4));
-        Lessons.add(new Lessons("L047", "Sunday",   "Afternoon", "Box Fit",    13.00, 8, 4));
-        Lessons.add(new Lessons("L048", "Sunday",   "Evening",   "Pilates",    11.50, 8, 4));
+        Lessons.add(new Lessons("L243", "Saturday", "Morning",   "Zumba",      24.00, 8, 4));
+        Lessons.add(new Lessons("L244", "Saturday", "Afternoon", "Aquacise",   11.00, 8, 4));
+        Lessons.add(new Lessons("L245", "Saturday", "Evening",   "Yoga",       18.00, 8, 4));
+        Lessons.add(new Lessons("L246", "Sunday",   "Morning",   "Body Blitz", 30.00, 8, 4));
+        Lessons.add(new Lessons("L247", "Sunday",   "Afternoon", "Box Fit",    13.00, 8, 4));
+        Lessons.add(new Lessons("L248", "Sunday",   "Evening",   "Pilates",    11.50, 8, 4));
     
 
 
@@ -175,7 +175,8 @@ public class Timetable {
     public void displayLessons(ArrayList<Lessons> list)
     {
         System.out.println("---------------------------------------------------------------------------------");
-        System.out.println(String.format("%-10s %-10s %-10s %-15s %-10s %-10s %-10s", "LessonsID", "Day", "Time", "Exercise Type", "Price", "Weekend", "Month"));
+        System.out.println(String.format("%-10s %-10s %-10s %-15s %-10s %-10s %-10s", 
+        "LessonsID", "Day", "Time", "Exercise Type", "Price", "Weekend", "Month"));
         System.out.println("---------------------------------------------------------------------------------");
         for(Lessons ln: list){
             System.out.println(String.format("%-10s %-10s %-10s %-15s %-10.2f %-10d %-10d",
