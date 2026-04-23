@@ -19,16 +19,16 @@ public class BookingSystem {
     }
 
     private void intializeMember() {
-        member.add(new Member("M001", "Hassan"));
-        member.add(new Member("M002", "Ali"));
-        member.add(new Member("M003", "Hamza"));
-        member.add(new Member("M004", "Sara"));
-        member.add(new Member("M005", "Ayesha"));
-        member.add(new Member("M006", "Zainab"));
-        member.add(new Member("M007", "Omar"));
-        member.add(new Member("M008", "Fatima"));
-        member.add(new Member("M009", "Ahmed"));
-        member.add(new Member("M010", "Maryam"));
+        member.add(new Member("M001", "Faraz"));
+        member.add(new Member("M002", "Jhon"));
+        member.add(new Member("M003", "James"));
+        member.add(new Member("M004", "Sheikh"));
+        member.add(new Member("M005", "Madiha"));
+        member.add(new Member("M006", "Ramzan"));
+        member.add(new Member("M007", "Ahmed"));
+        member.add(new Member("M008", "Talha"));
+        member.add(new Member("M009", "Areeb"));
+        member.add(new Member("M010", "Hassam"));
     }
 
     public boolean bookLessons(Member member, String lessonId) {
@@ -51,7 +51,7 @@ public class BookingSystem {
         }
 
         if (isDuplicateBooking(member, lessons)) {
-            System.out.println("you have already booking for this Lessons, kiindly make sure to cancel the previous booking before making a new one");
+            System.out.println("Lesson is already booked for it , so before book new lesson ,you have to cancel the previous one");
             return false;
         }
 
@@ -94,7 +94,7 @@ public class BookingSystem {
 
         if (isDuplicateBooking(booking.getMember(), newLessons)) {
             System.out.println(
-                    "You have already Booked this lesson. Please cancel the existing booking before making a new one.");
+                    "Booking is already exit , Kingly berfore book new Booking ,you have to cancel the previous one.");
             return false;
         }
 
@@ -105,12 +105,12 @@ public class BookingSystem {
         booking.changeLessons(newLessons);
         newLessons.incrementBooked();
 
-        System.out.println("Booking changed successfully");
+        System.out.println("Booking changed successful");
         return true;
 
     }
 
-    public boolean cancelBooking(String bookingId) {
+    public boolean cancelBooking(String bookingId , String lessonsId) {
         Booking booking = findBookingById(bookingId);
         if (booking == null) {
             System.out.println("Booking not found");
@@ -118,19 +118,19 @@ public class BookingSystem {
         }
 
         if (booking.getStatus() == BookingStatus.Cancelled) {
-            System.out.println("Booking is already cancelled");
+            System.out.println("Booking is already cancel");
             return false;
         }
 
         if (booking.getStatus() == BookingStatus.Attended) {
-            System.out.println("Cannot cancel an attended booking");
+            System.out.println("Cannot cancel attended booking");
             return false;
         }
 
         booking.getLessons().decrementBooked();
         booking.cancel();
         booking.getMember().removeBooking(booking);
-        System.out.println("Booking cancelled successfully");
+        System.out.println("Booking cancelled successful");
         return true;
 
     }
@@ -149,12 +149,12 @@ public class BookingSystem {
         }
 
         if (rating < 1 || rating > 5) {
-            System.out.println("Rating must be between 1 and 5");
+            System.out.println("Rating should be between 1 and 5");
             return false;
         }
 
         booking.attend(review, rating);
-        System.out.println("Lessons attended successfully");
+        System.out.println("Lessons attended successful");
         return true;
 
     }
